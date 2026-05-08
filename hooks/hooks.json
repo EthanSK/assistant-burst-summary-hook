@@ -1,0 +1,39 @@
+{
+  "description": "Assistant burst summary hooks for Claude Code. UserPromptSubmit detects voice-note boundaries; PostToolUse observes Telegram sends; Stop observes final assistant messages and schedules the quiet-window summary check.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/bin/assistant-burst-summary-hook.js claude-user-prompt",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*telegram*|mcp__telegram__*|message",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/bin/assistant-burst-summary-hook.js claude-post-tool-use",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/bin/assistant-burst-summary-hook.js claude-stop",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

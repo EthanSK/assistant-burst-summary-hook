@@ -1,0 +1,19 @@
+{
+  "name": "assistant-burst-summary-hook",
+  "description": "Claude Code hooks that summarize quiet Telegram assistant bursts after voice notes.",
+  "version": "0.1.0",
+  "keywords": [
+    "hooks",
+    "telegram",
+    "voice",
+    "summary",
+    "agent-bridge"
+  ],
+  "author": {
+    "name": "EthanSK",
+    "url": "https://github.com/EthanSK"
+  },
+  "homepage": "https://github.com/EthanSK/assistant-burst-summary-hook",
+  "repository": "https://github.com/EthanSK/assistant-burst-summary-hook",
+  "license": "MIT"
+}

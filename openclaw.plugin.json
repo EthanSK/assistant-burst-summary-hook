@@ -1,0 +1,87 @@
+{
+  "id": "assistant-burst-summary-hook",
+  "name": "Assistant Burst Summary Hook",
+  "description": "Sends one Telegram blockquote summary after a post-voice-note assistant burst goes quiet.",
+  "contracts": {
+    "hooks": [
+      "message_received",
+      "message_sending",
+      "message_sent",
+      "gateway_stop"
+    ]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "threshold": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 3
+      },
+      "inactivityMs": {
+        "type": "integer",
+        "minimum": 1000,
+        "default": 300000
+      },
+      "maxMessagesInSummary": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 8
+      },
+      "channels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "telegram"
+        ]
+      },
+      "stateDir": {
+        "type": "string"
+      },
+      "telegramBotTokenEnv": {
+        "type": "string",
+        "default": "TELEGRAM_BOT_TOKEN"
+      },
+      "telegramBotToken": {
+        "type": "string"
+      },
+      "telegramParseMode": {
+        "type": "string",
+        "enum": [
+          "MarkdownV2",
+          "HTML",
+          "none"
+        ],
+        "default": "MarkdownV2"
+      },
+      "summaryHeader": {
+        "type": "string",
+        "default": "Burst summary"
+      },
+      "voiceBoundaryPatterns": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "dryRun": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "version": "0.1.0",
+  "skills": [
+    "skills/assistant-burst-summary"
+  ]
+}

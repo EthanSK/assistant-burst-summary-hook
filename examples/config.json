@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "threshold": 3,
+  "inactivityMs": 300000,
+  "maxMessagesInSummary": 8,
+  "stateDir": "~/.local/state/assistant-burst-summary-hook",
+  "telegramBotTokenEnv": "TELEGRAM_BOT_TOKEN",
+  "telegramChatId": "6164541473",
+  "telegramParseMode": "MarkdownV2",
+  "summaryHeader": "Burst summary",
+  "voiceBoundaryPatterns": [
+    "voice note",
+    "voice message",
+    "audio transcription",
+    "Transcript:"
+  ]
+}

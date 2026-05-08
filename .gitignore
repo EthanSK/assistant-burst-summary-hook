@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+coverage/
+.tmp/
+*.log
+.env
+artifacts/*.json
+artifacts/*.jsonl
+artifacts/state/

@@ -1,0 +1,63 @@
+{
+  "name": "assistant-burst-summary-hook",
+  "version": "0.1.0",
+  "description": "Cross-harness assistant burst summary hooks for OpenClaw and Claude Code Telegram workflows.",
+  "type": "module",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "assistant-burst-summary-hook": "./bin/assistant-burst-summary-hook.js"
+  },
+  "exports": {
+    ".": "./src/core/index.js",
+    "./runtime": "./src/runtime/burst-runtime.js",
+    "./telegram": "./src/telegram/client.js",
+    "./claude": "./src/claude/hook-runner.js",
+    "./openclaw": "./src/openclaw/index.js"
+  },
+  "files": [
+    ".claude-plugin/",
+    ".claude/",
+    "bin/",
+    "docs/",
+    "examples/",
+    "hooks/",
+    "openclaw.plugin.json",
+    "skills/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "smoke": "node bin/assistant-burst-summary-hook.js simulate --json",
+    "validate:claude-plugin": "claude plugin validate .",
+    "validate:openclaw-plugin": "node --input-type=module -e \"await import('./src/openclaw/index.js')\""
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.5.7"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./src/openclaw/index.js"
+    ],
+    "runtimeExtensions": [
+      "./src/openclaw/index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.5.7",
+      "minGatewayVersion": "2026.5.7"
+    }
+  },
+  "devDependencies": {
+    "openclaw": "^2026.5.7"
+  }
+}

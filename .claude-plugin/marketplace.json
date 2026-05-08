@@ -1,0 +1,28 @@
+{
+  "name": "assistant-burst-summary-hook",
+  "owner": {
+    "name": "EthanSK",
+    "url": "https://github.com/EthanSK/assistant-burst-summary-hook"
+  },
+  "metadata": {
+    "description": "Local marketplace for a Claude Code hook pack that summarizes quiet Telegram assistant bursts after voice notes."
+  },
+  "plugins": [
+    {
+      "name": "assistant-burst-summary-hook",
+      "description": "Claude Code UserPromptSubmit/PostToolUse/Stop hooks that detect voice-note boundaries, track assistant Telegram sends, and send one blockquote burst summary after a quiet window.",
+      "category": "productivity",
+      "source": "./",
+      "homepage": "https://github.com/EthanSK/assistant-burst-summary-hook",
+      "keywords": [
+        "claude-code",
+        "openclaw",
+        "telegram",
+        "hooks",
+        "voice",
+        "summary",
+        "agent-bridge"
+      ]
+    }
+  ]
+}
