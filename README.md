@@ -120,3 +120,7 @@ claude plugin validate .
 ## Agent Bridge rollout
 
 See [`docs/agent-bridge-rollout.md`](docs/agent-bridge-rollout.md).
+
+## Weekly skill update checks
+
+The bundled skills include an agent-led weekly check against this public repository. A small Python 3 helper coordinates dates and leases; it starts no background process. The agent reviews updates, preserves local edits, uses the appropriate installer or plugin host, and tells you after a verified update. Users can opt out; copied skills without a trustworthy baseline require reconciliation before updating. This updates skill files only, without starting domain actions or restarting running services. See [the update procedure](skills/assistant-burst-summary/references/public-updates.md).
