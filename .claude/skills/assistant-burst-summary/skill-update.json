@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/EthanSK/assistant-burst-summary-hook",
+  "branch": "main",
+  "path": ".claude/skills/assistant-burst-summary",
+  "distribution": "git-or-copy"
+}
