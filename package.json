@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Cross-harness assistant burst summary hooks for OpenClaw and Claude Code Telegram workflows.",
   "type": "module",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "private": false,
   "bin": {
     "assistant-burst-summary-hook": "./bin/assistant-burst-summary-hook.js"
